@@ -6,9 +6,24 @@ Search form: <input id="search_text" type="text" /> <input id="search_btn" type=
 		$.get("/api/contacts/" + text).done(function(data){
 			var result = JSON.stringify(data);
 			console.log(result);
-			alert('we got data: ' + result);
+			// alert('we got data: ' + result);
+			$('#test').dataTable({
+			    "aaData": data.payload,
+			    "aoColumns": [
+			        { "mDataProp": "name" },
+			        { "mDataProp": "fbid" },
+			        { "mDataProp": "email" },
+			        { "mDataProp": "picurl" }
+			    ]
+			});
+
 		});
 	})
 
 
 </script>
+
+<table id="test" class="dataTable">
+</table>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
