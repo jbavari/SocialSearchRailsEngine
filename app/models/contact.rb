@@ -1,3 +1,4 @@
+require 'fb_graph'
 class Contact
 	def self.search(name, token)
 		users_array = Array.new

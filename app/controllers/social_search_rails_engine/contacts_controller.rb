@@ -1,4 +1,4 @@
-class ContactsController < ApplicationController
+class SocialSearchRailsEngine::ContactsController < ApplicationController
 	before_action :check_key
 	skip_before_action :check_key, only: [:auth]
 
